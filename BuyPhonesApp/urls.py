@@ -9,14 +9,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("",views.homepage),
     path('phones/',views.all_phones),
-    path('managePhones',views.managePhone),
-    path('deletePhones',views.deletePhone),
     path('addNewPhone',views.addNewPhone),
     path('editPhone',views.editPhone),
     path('updatePhone',views.updatePhone),
     path('addPhone',views.addPhone),
-    path('phoneDetails',views.show_PhoneDetails),
-    path('search/',views.all_phones),
     
 ]
 
