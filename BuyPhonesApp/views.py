@@ -55,3 +55,28 @@ def updatePhone(request):
     Mobile.objects.filter(id_id=mob_id).update(mobile_name=mobile_name)
     mobiles = Mobile.objects.all()
     return render(request,'managePhones.html',{'mobiles':mobiles})
+
+def managePhone(request):
+    try:
+        mobiles = Mobile.objects.all()
+        return render(request,'managePhones.html',{'mobiles':mobiles})
+    except:
+        print("something Went Wrong in Manage restaurant")    
+def deletePhone(request):
+    try:
+        Mobile.objects.get(id_id=request.GET['mob_id']).delete()
+        mobiles = Mobile.objects.all()
+        return render(request,'managePhones.html',{'mobiles':mobiles})
+    except:
+       print("something Went Wrong while deleting restaurant")
+
+def show_PhoneDetails(request):
+    try:
+        mob_id = request.GET['mob_id']
+        mobiles = Mobile.objects.get(id_id=mob_id)
+        specs = Specs.objects.get(id = mob_id)
+        return render(request,'phoneDetails.html',{"mobiles":mobiles , "specs":specs})    
+    except:
+        print('Something Went Wrong')
+
+

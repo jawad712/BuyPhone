@@ -13,6 +13,9 @@ urlpatterns = [
     path('editPhone',views.editPhone),
     path('updatePhone',views.updatePhone),
     path('addPhone',views.addPhone),
+    path('managePhones',views.managePhone),
+    path('deletePhones',views.deletePhone),
+    path('phoneDetails',views.show_PhoneDetails)
     
 ]
 
